@@ -8,7 +8,7 @@
             li
                 router-link(:to="{ name: 'atbash'}") AtBash
             li
-                a(href="sass.html") Scytale
+                router-link(:to="{ name: 'scytale'}") Scytale
             li
                 a(href="sass.html") Code césar
             li
@@ -17,7 +17,7 @@
             li
                 router-link(:to="{ name: 'atbash'}") AtBash
             li
-                a(href="badges.html") Scytale
+                router-link(:to="{ name: 'scytale'}") Scytale
             li
                 a(href="collapsible.html") Code césar
             li
