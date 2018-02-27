@@ -10,7 +10,7 @@
             li
                 router-link(:to="{ name: 'scytale'}") Scytale
             li
-                router-link(:to="{ name: 'caesar'}") Code césar
+                router-link(:to="{ name: 'cesar'}") Code césar
             li
                 a(href="sass.html") AUTEURS
         ul(class="side-nav" id="mobile-demo")
@@ -19,7 +19,7 @@
             li
                 router-link(:to="{ name: 'scytale'}") Scytale
             li
-                router-link(:to="{ name: 'caesar'}") Code césar
+                router-link(:to="{ name: 'cesar'}") Code césar
             li
                 a(href="mobile.html") AUTEURS
 
