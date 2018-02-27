@@ -22,8 +22,4 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-.brand-logo {
-  margin-left: 20px;
-}
 </style>
