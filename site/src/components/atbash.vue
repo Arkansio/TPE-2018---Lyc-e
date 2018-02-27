@@ -4,8 +4,8 @@
         h4 Que fait-il ?
         p Atbash est une methode de chiffrement datant de -500 av J-C. Elle inverse simplement l'alphabet comme un miroir : A deviens Z, B devient Y..
         h4 Code
-        pre
-          code(class="python") {{ text }}
+        pre(v-highlightjs="text")
+          code(class="python")
         h4 Execution
         h5 Encodage
         label(for="icon_prefix") Texte à encoder
@@ -30,7 +30,7 @@ export default {
     return {
       text: txt,
       toEncode: 'coucou comment tu vas',
-      toDecode: 'xlfxl fxlnn vmggf ezhzz zzz'
+      toDecode: 'xlfxlfxlnnvmggfezh'
     }
   },
   methods: {
@@ -58,10 +58,6 @@ export default {
     resultDecode: function () {
       return this.encrypt(this.toDecode)
     }
-  },
-  mounted: function () {
-    // eslint-disable-next-line
-    hljs.initHighlightingOnLoad()
   }
 }
 </script>
