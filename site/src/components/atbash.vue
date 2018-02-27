@@ -38,6 +38,10 @@ export default {
       const key = this.getKey()
       var subject = argument.toLowerCase().replace(/[^a-z0-9]/, '')
       subject = [...subject].map((char) => key[char]).join('')
+      for (var x = 5, i = 0; x < subject.length; x = x + 5) {
+        subject = subject.slice(0, x + i) + ' ' + subject.slice(x + i)
+        i++
+      }
       return subject.trim()
     },
     getKey: function () {
