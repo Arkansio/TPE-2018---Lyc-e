@@ -22,6 +22,8 @@
         h5 Décodage
         label(for="icon_prefix") Texte à décoder
         input(id="icon_prefix" type="text" class="validate"  v-model='toDecode')
+        label(for="icon_prefix") Nombre de pas
+        input(id="icon_prefix" type="number" class="validate"  v-model='stepDecodage')
         label(for="icon_prefix") Sortie
         output
           code {{ resultDecode }}
@@ -37,9 +39,10 @@ export default {
     return {
       encodageTxt: encodageTxt,
       stepEncodage: 3,
+      stepDecodage: 3,
       decodageTxt: decodageTxt,
       toEncode: 'coucoucommenttuvas',
-      toDecode: 'xlfxlfxlnnvmggfezh'
+      toDecode: 'CCCMTVOOOETAUUMNUS'
     }
   },
   methods: {
@@ -58,6 +61,28 @@ export default {
         }
       }
       return crypted.join('')
+    },
+    decrypt: function (msg, key) {
+      msg = msg.toUpperCase()
+      var nbCol = parseInt(Math.ceil(msg.length / key))
+      var nbRow = key
+      var nbEmpty = nbCol * nbRow - msg.length
+      var decrypted = []
+      while (decrypted.length < nbCol) {
+        // eslint-disable-next-line
+        decrypted.push("")
+      }
+      var col = 0
+      var row = 0
+      for (var i = 0; i < msg.length; i++) {
+        decrypted[col] += msg.charAt(i)
+        col += 1
+        if ((col === nbCol) || (col === nbCol - 1 && row >= nbRow - nbEmpty)) {
+          col = 0
+          row += 1
+        }
+      }
+      return decrypted.join('')
     }
   },
   computed: {
@@ -65,7 +90,11 @@ export default {
       return this.encrypt(this.toEncode, parseInt(this.stepEncodage))
     },
     resultDecode: function () {
-      return this.encrypt(this.toDecode, 4)
+      if(parseInt(this.stepDecodage) > 0 && parseInt(this.stepDecodage) < this.toDecode.length / 2) {
+        return this.decrypt(this.toDecode, parseInt(this.stepDecodage))
+      } else {
+        return 'Veuillez inscrire un nombre valide entre 1 et ' + (this.toDecode.length / 2)
+      }
     }
   }
 }
