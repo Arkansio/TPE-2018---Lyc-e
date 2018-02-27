@@ -30,7 +30,11 @@ export default {
   name: 'navbar',
   mounted: function () {
     // eslint-disable-next-line
-    $('.button-collapse').sideNav()
+    $('.button-collapse').sideNav({
+      menuWidth: 300,
+      closeOnClick: true,
+      draggable: true
+    })
   }
 }
 </script>
