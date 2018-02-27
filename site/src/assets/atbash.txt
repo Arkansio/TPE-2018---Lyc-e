@@ -1,0 +1,37 @@
+#-------------------------------------------------------------------------------
+# Name:        Atbash
+# Purpose:
+#
+# Author:      a.Akgonul
+#
+# Created:     05/12/2017
+# Copyright:   (c) A.AKGONUL 2017
+# Licence:     <your licence>
+#-------------------------------------------------------------------------------
+def Chiffrement(message): # Mise en place de la fonction qui encodera le message
+    translated = ''
+
+    for character in message : #condition d'existence de la variable message
+        if (character < 'A' or character > 'z' ):
+            print('character invalide')
+        elif character >= 'a' and character <= 'z': #on vérifie que les characteres du message sont compris entre a et z en minuscule
+            translated += chr (219-ord (character)) # On transfome la lettre en chiffre ASCII avec la fonction "chr" pour permettre son traitement, ensuite on retransforme en lettre avec "ord"
+        elif character >= 'A' and character <= 'Z': # La meme chose pour les lettres en Majuscules
+            translated += chr(155-ord(character))
+        else:
+             translated = translated + character    #on additionne les charactere codés pour qu'ils soient tous a ffichés a la sorti
+
+
+    return translated
+
+# Encoding
+message= "" #definiition de la variable
+message= input("Entrez votre message: ") #choix du message a coder
+messageApresTraitement = Chiffrement(message) #application de la fonciton défini au dessus
+print(messageApresTraitement ) #afficher le message
+
+# Decoding
+message = ""
+message = Chiffrement(messageApresTraitement )
+print(message)
+input('Appuyez sur ENTREE pour quitter')
