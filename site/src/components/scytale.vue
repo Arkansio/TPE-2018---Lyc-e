@@ -90,7 +90,7 @@ export default {
       return this.encrypt(this.toEncode, parseInt(this.stepEncodage))
     },
     resultDecode: function () {
-      if(parseInt(this.stepDecodage) > 0 && parseInt(this.stepDecodage) < this.toDecode.length / 2) {
+      if (parseInt(this.stepDecodage) > 0 && parseInt(this.stepDecodage) < this.toDecode.length / 2) {
         return this.decrypt(this.toDecode, parseInt(this.stepDecodage))
       } else {
         return 'Veuillez inscrire un nombre valide entre 1 et ' + (this.toDecode.length / 2)
