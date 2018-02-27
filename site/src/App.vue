@@ -1,8 +1,8 @@
-<template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
-  </div>
+<template lang="pug">
+  div(id="app")
+    h1 CRYPT-TPE
+    router-view
+
 </template>
 
 <script>
