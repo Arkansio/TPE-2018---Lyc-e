@@ -14,6 +14,8 @@
         h5 Encodage
         label(for="icon_prefix") Texte à encoder
         input(id="icon_prefix" type="text" class="validate"  v-model='toEncode')
+        label(for="icon_prefix") Nombre de pas
+        input(id="icon_prefix" type="number" class="validate"  v-model='stepEncodage')
         label(for="icon_prefix") Sortie
         output
           code {{ resultEncode }}
@@ -34,23 +36,36 @@ export default {
   data () {
     return {
       encodageTxt: encodageTxt,
+      stepEncodage: 3,
       decodageTxt: decodageTxt,
-      toEncode: 'coucou comment tu vas',
+      toEncode: 'coucoucommenttuvas',
       toDecode: 'xlfxlfxlnnvmggfezh'
     }
   },
   methods: {
     encrypt: function (msg, key) {
-      msg = msg.upper()
-      var crypted = [''] * key
+      msg = msg.toUpperCase()
+      var crypted = []
+      while (crypted.length < key) {
+        // eslint-disable-next-line
+        crypted.push("")
+      }
+      for (var i = 0; i < key; i++) {
+        var pointer = i
+        while (pointer < msg.length) {
+          crypted[i] += msg[pointer]
+          pointer += key
+        }
+      }
+      return crypted.join('')
     }
   },
   computed: {
     resultEncode: function () {
-      return this.encrypt(this.toEncode)
+      return this.encrypt(this.toEncode, parseInt(this.stepEncodage))
     },
     resultDecode: function () {
-      return this.encrypt(this.toDecode)
+      return this.encrypt(this.toDecode, 4)
     }
   }
 }
