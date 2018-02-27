@@ -12,7 +12,7 @@
             li
                 router-link(:to="{ name: 'cesar'}") Code césar
             li
-                router-link(:to="{ name: 'author'}") Auteurs
+                router-link(:to="{ name: 'team'}") Auteurs
         ul(class="side-nav" id="mobile-demo")
             li
                 router-link(:to="{ name: 'atbash'}") AtBash
@@ -21,7 +21,7 @@
             li
                 router-link(:to="{ name: 'cesar'}") Code césar
             li
-                router-link(:to="{ name: 'cesar'}") Auteurs
+                router-link(:to="{ name: 'team'}") Auteurs
 
 </template>
 
