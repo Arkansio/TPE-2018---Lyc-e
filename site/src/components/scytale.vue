@@ -2,9 +2,13 @@
     div(class="container")
         h1 Le cryptage Scytale
         h4 Que fait-il ?
-        p Atbash est une methode de chiffrement datant de -500 av J-C. Elle inverse simplement l'alphabet comme un miroir : A deviens Z, B devient Y..
+        p Après avoir enroulé la ceinture sur la scytale, le message était écrit en plaçant une lettre sur chaque circonvolution. Pour le déchiffrer, le destinataire devait posséder un bâton d'un diamètre identique à celui utilisé pour l'encodage. Il lui suffisait alors d'enrouler la scytale autour de ce bâton pour obtenir le message en clair.
         h4 Code
-        pre(v-highlightjs="text")
+        h5 Encodage
+        pre(v-highlightjs="encodageTxt")
+          code(class="python")
+        h5 Decodage
+        pre(v-highlightjs="decodageTxt")
           code(class="python")
         h4 Execution
         h5 Encodage
@@ -22,33 +26,23 @@
 </template>
 
 <script>
-import txt from '../assets/atbash.txt'
+import encodageTxt from '../assets/scytaleEncode.txt'
+import decodageTxt from '../assets/scytaleDecode.txt'
 
 export default {
-  name: 'atbash',
+  name: 'scytale',
   data () {
     return {
-      text: txt,
+      encodageTxt: encodageTxt,
+      decodageTxt: decodageTxt,
       toEncode: 'coucou comment tu vas',
       toDecode: 'xlfxlfxlnnvmggfezh'
     }
   },
   methods: {
-    encrypt: function (argument) {
-      const key = this.getKey()
-      var subject = argument.toLowerCase().replace(/[^a-z0-9]/, '')
-      subject = [...subject].map((char) => key[char]).join('')
-      return subject.trim()
-    },
-    getKey: function () {
-      let out = {}
-      var forward = 'abcdefghijklmnopqrstuvwxyz0123456789'
-      var backward = 'zyxwvutsrqponmlkjihgfedcba0123456789'
-
-      for (var x = 0; x < forward.length; x++) {
-        out[forward.charAt(x)] = backward.charAt(x)
-      }
-      return out
+    encrypt: function (msg, key) {
+      msg = msg.upper()
+      var crypted = [''] * key
     }
   },
   computed: {
