@@ -10,7 +10,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/atbash',
+      path: '/',
       name: 'atbash',
       component: atBash
     },
