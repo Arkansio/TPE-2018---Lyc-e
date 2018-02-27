@@ -6,7 +6,7 @@
             i(class="material-icons") menu
         ul(id="nav-mobile" class="right hide-on-med-and-down")
             li
-                a(href="sass.html") AtBash
+                router-link(:to="{ name: 'atbash'}") AtBash
             li
                 a(href="sass.html") Scytale
             li
@@ -15,7 +15,7 @@
                 a(href="sass.html") AUTEURS
         ul(class="side-nav" id="mobile-demo")
             li
-                a(href="sass.html") AtBash
+                router-link(:to="{ name: 'atbash'}") AtBash
             li
                 a(href="badges.html") Scytale
             li

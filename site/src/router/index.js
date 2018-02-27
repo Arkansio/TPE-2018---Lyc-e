@@ -7,8 +7,8 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'AtBash',
+      path: '/atbash',
+      name: 'atbash',
       component: atBash
     }
   ]
