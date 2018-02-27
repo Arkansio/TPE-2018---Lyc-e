@@ -2,7 +2,7 @@
     div(class="container")
         h1 Le cryptage César
         h4 Que fait-il ?
-        p Atbash est une methode de chiffrement datant de -500 av J-C. Elle inverse simplement l'alphabet comme un miroir : A deviens Z, B devient Y..
+        p Le texte chiffré s'obtient en remplaçant chaque lettre du texte clair original par une lettre à distance fixe, toujours du même côté, dans l'ordre de l'alphabet. Pour les dernières lettres (dans le cas d'un décalage à droite), on reprend au début. Par exemple avec un décalage de 3 vers la droite, A est remplacé par D, B devient E, et ainsi jusqu'à W qui devient Z, puis X devient A etc. Il s'agit d'une permutation circulaire de l'alphabet
         h4 Code
         pre(v-highlightjs="text")
           code(class="python")
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import txt from '../assets/atbash.txt'
+import txt from '../assets/cesar.txt'
 
 export default {
   name: 'atbash',

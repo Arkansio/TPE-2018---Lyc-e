@@ -1,0 +1,30 @@
+#coding: utf8
+#-------------------------------------------------------------------------------
+# Name:        module1
+# Purpose:
+#
+# Author:      a.akgonul
+#
+# Created:     12/12/2017
+# Copyright:   (c) a.akgonul 2017
+# Licence:     <your licence>
+#-------------------------------------------------------------------------------
+
+liste_lettre=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"] #le code césar marche grace à l'alphabet
+while True:
+    pas=int(input("Saisissez le pas :"))#choix du pas càd un nombre qui decale les lettres dans l'alphabet
+    while pas>26:#tant que le pas est supérieur à 26
+        pas-=26 #la phrase revient telle qu'elle était au début
+    phrase=(input("Votre phrase : ")).lower()#introduction de la phrase qu'on veut coder
+    phrase_codee=[] #on crée une variable vide
+    phrase=phrase.split()# split sert à découper la phrase
+    for mot in phrase:
+
+        liste_mot=[]#on crée une variable vide
+        for lettre in mot:#pour la lettre dans le mot
+            i=liste_lettre.index(lettre)#le programme pointe chaque lettre
+            if i+pas>25:#si i+pas choisi > 25 la lettre ne change pas
+                i-=26#on revient au point de départ
+            liste_mot.append(liste_lettre[i+pas])
+        phrase_codee.append("".join(liste_mot))#la phrase apparait
+    print(" ".join(phrase_codee)) #la phrase codée apparait
