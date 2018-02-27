@@ -30,7 +30,7 @@ import txt from '../assets/cesar.txt'
 import { encrypt, decrypt } from 'caesar-shift'
 
 export default {
-  name: 'atbash',
+  name: 'cesar',
   data () {
     return {
       text: txt,
