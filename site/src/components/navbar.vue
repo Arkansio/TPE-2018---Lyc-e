@@ -10,9 +10,9 @@
             li
                 router-link(:to="{ name: 'scytale'}") Scytale
             li
-                router-link(:to="{ name: 'author'}") Code césar
+                router-link(:to="{ name: 'cesar'}") Code césar
             li
-                a(href="sass.html") AUTEURS
+                router-link(:to="{ name: 'author'}") Auteurs
         ul(class="side-nav" id="mobile-demo")
             li
                 router-link(:to="{ name: 'atbash'}") AtBash
@@ -21,7 +21,7 @@
             li
                 router-link(:to="{ name: 'cesar'}") Code césar
             li
-                router-link(:to="{ name: 'author'}") AUTEURS
+                router-link(:to="{ name: 'cesar'}") Auteurs
 
 </template>
 
