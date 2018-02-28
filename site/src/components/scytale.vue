@@ -2,7 +2,7 @@
     div(class="container")
         h1 Le cryptage Scytale
         h4 Que fait-il ?
-        p La scytale est une méthode de chiffrement par transposition qui consiste à écrire le mot a coder dans un tableau en écrivant dans chaque ligne le nombre de caractère qui équivaut à la clé. Le message codé sera donné  en réecrivant le message colonne par colonne.
+        p La scytale est une méthode de chiffrement par transposition qui consiste à écrire le mot à coder dans un tableau en écrivant dans chaque ligne le nombre de caractère qui équivaut à la clé. Le message codé sera donné  en réecrivant le message colonne par colonne.
         h4 Code
         h5 Encodage
         pre(v-highlightjs="encodageTxt")
