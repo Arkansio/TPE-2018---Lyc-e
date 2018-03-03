@@ -10,24 +10,24 @@
 def Chiffrement(message): # Mise en place de la fonction qui encodera le message
     translated = ''
 
-    for character in message : #condition d'existence de la variable message
+    for character in message : # Pour tous les caracteres dans la chaîne "message"
         if (character < 'A' or character > 'z' ):
             print('character invalide')
-        elif character >= 'a' and character <= 'z': #on vérifie que les characteres du message sont compris entre a et z en minuscule
+        elif character >= 'a' and character <= 'z': # On vérifie que les characteres du message sont compris entre a et z en minuscule
             translated += chr (219-ord (character)) # On transfome la lettre en chiffre ASCII avec la fonction "chr" pour permettre son traitement, ensuite on retransforme en lettre avec "ord"
-        elif character >= 'A' and character <= 'Z': # La meme chose pour les lettres en Majuscules
+        elif character >= 'A' and character <= 'Z': # La même chose pour les lettres en Majuscules
             translated += chr(155-ord(character))
         else:
-             translated = translated + character    #on additionne les charactere codés pour qu'ils soient tous a ffichés a la sorti
+             translated = translated + character    # On additionne les caractères codés pour qu'ils soient tous affichés à la sortie
 
 
     return translated
 
 # Encoding
-message= "" #definiition de la variable
-message= input("Entrez votre message: ") #choix du message a coder
-messageApresTraitement = Chiffrement(message) #application de la fonciton défini au dessus
-print(messageApresTraitement ) #afficher le message
+message= "" # Définition de la variable
+message= input("Entrez votre message: ") # Choix du message à coder
+messageApresTraitement = Chiffrement(message) # Application de la fonction défini au dessus
+print(messageApresTraitement ) # Affiche le message après le traitement
 
 # Decoding
 message = ""

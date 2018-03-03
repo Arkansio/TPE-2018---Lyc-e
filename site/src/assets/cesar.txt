@@ -1,6 +1,6 @@
 #coding: utf8
 #-------------------------------------------------------------------------------
-# Name:        module1
+# Name:        Cesar
 # Purpose:
 #
 # Author:      a.akgonul
@@ -11,19 +11,19 @@
 
 liste_lettre=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"] #le code césar marche grace à l'alphabet
 while True:
-    pas=int(input("Saisissez le pas :"))#choix du pas càd un nombre qui decale les lettres dans l'alphabet
-    while pas>26:#tant que le pas est supérieur à 26
-        pas-=26 #la phrase revient telle qu'elle était au début
-    phrase=(input("Votre phrase : ")).lower()#introduction de la phrase qu'on veut coder
-    phrase_codee=[] #on crée une variable vide
-    phrase=phrase.split()# split sert à découper la phrase
+    pas=int(input("Saisissez le pas :")) # Choix du "pas" càd un nombre qui décale les lettres dans l'alphabet
+    while pas>26: # Tant que le pas est supérieur à 26
+        pas-=26 # La phrase revient telle qu'elle était au début
+    phrase=(input("Votre phrase : ")).lower() # Introduction de la phrase qu'on veut coder
+    phrase_codee=[] # On crée une variable vide
+    phrase=phrase.split() # Split sert à découper la phrase
     for mot in phrase:
 
-        liste_mot=[]#on crée une variable vide
-        for lettre in mot:#pour la lettre dans le mot
-            i=liste_lettre.index(lettre)#le programme pointe chaque lettre
-            if i+pas>25:#si i+pas choisi > 25 la lettre ne change pas
-                i-=26#on revient au point de départ
+        liste_mot=[] # On crée une variable vide
+        for lettre in mot: # Pour chaque lettre dans le mot
+            i=liste_lettre.index(lettre) # Le programme pointe chaque lettre
+            if i+pas>25: # Si i+pas choisi > 25 la lettre ne change pas
+                i-=26 # On revient au point de départ
             liste_mot.append(liste_lettre[i+pas])
-        phrase_codee.append("".join(liste_mot))#la phrase apparait
-    print(" ".join(phrase_codee)) #la phrase codée apparait
+        phrase_codee.append("".join(liste_mot)) # La phrase apparait
+    print(" ".join(phrase_codee)) # La phrase codée apparait

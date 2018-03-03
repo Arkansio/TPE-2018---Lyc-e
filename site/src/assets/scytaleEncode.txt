@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------
-# Name:        module1
+# Name:        scytaleEncode
 # Purpose:
 #
 # Author:      Seb
@@ -8,35 +8,32 @@
 # Copyright:   (c) Seb 2018
 #-------------------------------------------------------------------------------
 
-# On met le message dans la variable "message"
-# puis on le decode et on le met en majuscule.
+# On met le message dans la variable "message" puis on le décode et on le met en majuscule.
 message = input("message a coder ")
 message = message.upper()
-# On indique a l'utilisateur le nombre de cles possibles
+# On indique à l'utilisateur le nombre de clés possibles
 print ("\n" + str(len(message)/2) + " possibilitees de cles.")
-#On choisit une cle
+# On choisit une clé
 key = int(input("cle"))
-# On recree nos colones, mais en creeant une liste avec
-# autant d'elements que la cle. Chaque element est pour l'instant du texte vide.
+# On recrée nos colonnes, mais en créeant une liste avec autant d'éléments que la clé.
+# Chaque élément est pour l'instant du texte vide.
 crypted = [''] * key
-# On lance une boucle qui va se repeter pour chaque colonnes
+# On lance une boucle qui va se répéter pour chaque colonnes
 for col in range(key):
-	# On cree une variable "pointer" qui va nous permettre d'avance de
-	# caractere en caractere dans notre message.
+	# On crée une variable "pointer" qui va nous permettre d'avance de caractère en caractère dans notre message.
 	pointer = col
-	# Tant que "pointer" est plus petit que le nombre de caractere dans le
-	# texte, la boucle continuera a rouler.
+	# Tant que "pointer" est plus petit que le nombre de caractères dans le texte, la boucle continuera à tourner.
 	while pointer < len(message):
 
-# On ajoute dans les colones les caracteres un a un, mais dans un ordre
-# particulier. Par exemple, on va chercher le premier caractere, on le met dans
-# la premiere colonne, puis on va chercher le caractere qui se trouve "cle"
-# caractees plus loin, pour le mettre encore une fois dans la premiere colone,
-# et ainsi de suite. Pour la 2eme colone, on commencera avec le deuxieme
-# caractere, puis avec le caractere qui est "cle" caracteres plus loin, etc.
+# On ajoute dans les colonnes les caractères un a un, mais dans un ordre
+# particulier. Par exemple, on va chercher le premier caractère, on le met dans
+# la premiere colonne, puis on va chercher le caractère qui se trouve "cle"
+# caractères plus loin, pour le mettre encore une fois dans la premiere colonne,
+# et ainsi de suite. Pour la 2ème colonne, on commencera avec le deuxième
+# caractère, puis avec le caractère qui est "cle" caractères plus loin, etc.
 
 		crypted[col] += message[pointer]
 		pointer += key
-# Et finalement, on affiche a l'ecran le texte crypte!
+# Et finalement, on affiche a l'écran le texte crypté!
 print ("\n*** Texte crypte! ***")
 print (''.join(crypted) + '|\n')

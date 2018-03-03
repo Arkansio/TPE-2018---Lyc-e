@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------
-# Name:        module2
+# Name:        scytaleDecode
 # Purpose:
 #
 # Author:      Seb
@@ -8,49 +8,44 @@
 # Copyright:   (c) seb 2018
 #-------------------------------------------------------------------------------
 
-# On importe le module "math", qui va nous etre utile pour une fonction
-# particuliere.
+# On importe le module "math", qui va nous être utile pour une fonction particulière
 import math
 
-# On met le message crypte dans la variable "message". On met le tout en
-# majuscule et on decode.
+# On met le message crypté dans la variable "message". On met le tout en majuscule et on décode.
 
 message = input("message a decoder")
 message = message.upper()
 
-# On met notre cle dans la variable key.
+# On met notre clé dans la variable "key".
 key = int(input("cle"))
 
 # C'est pour la fonction "ceil" que l'on avait besoin du module "math".
-# Ici, on calcule le nombre de colonnes en divisant le nombre de caracteres
-# dans le message crypte par la cle. On arrondit le tout a l'entier superieur.
+# Ici, on calcule le nombre de colonnes en divisant le nombre de caractères dans le message crypté par la clé.
+# On arrondit le tout a l'entier superieur.
 
 num_col = int(math.ceil(len(message) / float(key)))
-# Le nombre de lignes correspond a la cle.
+# Le nombre de lignes correspond a la clé.
 num_rows = key
-# Il peut rester des cases vides a la fin du tableau.
+# Il peut rester des cases vides à la fin du tableau.
 # On les calcule ici.
 num_empty = (num_col*num_rows) - len(message)
-# Notre message decrypte est un ensemble d'elements correspondant au nombre de
-# colonnes.
-# Les elements sont du texte vide pour l'instant.
+# Notre message decrypté est un ensemble d'éléments correspondant au nombre de colonnes.
+# Les éléments sont du texte vide pour l'instant.
 decrypted = [''] * num_col
-# On commence a la colonne zero et a la ligne zero
+# On commence à la colonne zéro et à la ligne zéro
 col = 0
 row = 0
-# On lance une boucle pour chaque caractere dans le message crypte.
+# On lance une boucle pour chaque caractère dans le message crypté.
 for car in message:
-	# On repartit les caracteres du message cypte dans les colonnes
-	# correspondantes.
+	# On répartit les caractères du message cypté dans les colonnes correspondantes.
 	decrypted[col] += car
 	col += 1
 	# On impose une condition.
-	# Si on a rempli toutes les colonnes,
-	# on passe a la ligne suivante.
+	# Si on a rempli toutes les colonnes alors on passe à la ligne suivante.
 	if (col == num_col) or (col == num_col - 1 and row >= num_rows - num_empty):
 		col = 0
 		row += 1
 
-# On affiche le message decrypte a l'ecran.
+# On affiche le message decrypté à l'écran
 print ("\n*** Message decrypte! ***\n")
 print (''.join(decrypted) + "\n")
