@@ -29,8 +29,8 @@ export default {
   data () {
     return {
       text: txt,
-      toEncode: 'coucou comment tu vas',
-      toDecode: 'xlfxlfxlnnvmggfezh'
+      toEncode: 'mettre_un_texte_ici',
+      toDecode: 'nvggi vfmgv cgvrx r'
     }
   },
   methods: {

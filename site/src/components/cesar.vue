@@ -36,8 +36,8 @@ export default {
       text: txt,
       stepEncodage: 6,
       stepDecodage: 6,
-      toEncode: 'coucou comment tu vas',
-      toDecode: 'iuaiua iussktz za bgy'
+      toEncode: 'mettre un texte ici',
+      toDecode: 'skzzxk at zkdzk oio'
     }
   },
   computed: {

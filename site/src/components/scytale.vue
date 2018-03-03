@@ -41,8 +41,8 @@ export default {
       stepEncodage: 3,
       stepDecodage: 3,
       decodageTxt: decodageTxt,
-      toEncode: 'coucoucommenttuvas',
-      toDecode: 'CCCMTVOOOETAUUMNUS'
+      toEncode: 'mettre_un_texte_ici',
+      toDecode: 'MT__X_IERUTTITENEEC'
     }
   },
   methods: {
