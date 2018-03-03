@@ -7,7 +7,6 @@
 #
 # Created:     12/12/2017
 # Copyright:   (c) a.akgonul 2017
-# Licence:     <your licence>
 #-------------------------------------------------------------------------------
 
 liste_lettre=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"] #le code césar marche grace à l'alphabet

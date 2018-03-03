@@ -6,7 +6,6 @@
 #
 # Created:     04/02/2018
 # Copyright:   (c) Seb 2018
-# Licence:     <your licence>
 #-------------------------------------------------------------------------------
 
 # On met le message dans la variable "message"

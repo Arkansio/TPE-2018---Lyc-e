@@ -42,10 +42,10 @@ export default {
   },
   computed: {
     resultEncode: function () {
-      return encrypt(this.stepEncodage, this.toEncode)
+      return encrypt(parseInt(this.stepEncodage), this.toEncode)
     },
     resultDecode: function () {
-      return decrypt(this.stepDecodage, this.toDecode)
+      return decrypt(parseInt(this.stepDecodage), this.toDecode)
     }
   }
 }
